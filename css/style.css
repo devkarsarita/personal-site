@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
-*{
-border: 1px solid red;
-}
+
 html, body{
   margin:0;
 padding:0;
@@ -11,11 +9,7 @@ body{
   font-family: 'Poppins', sans-serif;
   font-size: 0.9rem;
 }
-html, body{
 
-
-
-}
 h1{
   font-size:1.5rem;
 }
@@ -38,7 +32,7 @@ h3{
 
 .brand-title {
     font-size: 1.5rem;
-    /* margin: .5rem; */
+
 }
 
 .navbar-links {
@@ -94,38 +88,9 @@ bottom:-6px;
 transition:0.5s;
 }
 
-@media (max-width: 800px) {
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-    }
 
-    .toggle-button {
-        display: flex;
-    }
 
-    .navbar-links {
-        display: none;
-        width: 100%;
-    }
 
-    .navbar-links ul {
-        width: 100%;
-        flex-direction: column;
-    }
-
-    .navbar-links ul li {
-        text-align: center;
-    }
-
-    .navbar-links ul li a {
-        padding: .5rem 1rem;
-    }
-
-    .navbar-links.active {
-        display: flex;
-    }
-}
 
 .navbar{
   display: flex;
@@ -136,47 +101,14 @@ transition:0.5s;
 }
 
 /* navbar section */
-/* header {
 
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 103px;
-    line-height: 10px;
-    background-color: black;
-    color:white;
 
-}
-header ul {
-    padding: 0;
-}
 
-header li {
-    margin-left: 20px;
-      text-align: center;
-} */
 .navimg{
   width:220px;
   height:100px;
 }
-/* nav ul{
-  margin: 0;
-  padding: 0;
-  display:flex;
-}
-nav ul li{
-    list-style-type: none;
-    margin: 10px 20px;
 
-
-}
-nav{
-  display:flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap:wrap;
-  font-size: 25px;
-} */
 
 .navbar-links ul li a{
   color:white;
@@ -372,12 +304,10 @@ justify-content:center;
 
 
 #contact{
-  /* height: 100%; */
-  width:100%;
-  margin-top: 250px;
+
   background-color: black;
   color:white;
-  padding-top: 60px;
+  padding-top: 30px;
 }
 section {
     height: 120vh;
@@ -453,10 +383,7 @@ width: 350px;
   margin-left:100px;
   height:250px;
 }
-.section-inner{
 
-
-}
 
 #about{
   padding: 80px;
@@ -515,9 +442,7 @@ margin-top:60px;
   float:right;
 
 }
-.row .contact-left .contact-right{
 
-}
 
 .contact-left p i{
   color:black;
@@ -525,9 +450,7 @@ margin-top:60px;
   font-size:25px;
   float:left;
 }
- /* .social-icons{
-  margin-top:30px;
-} */
+
 .social-icons a{
   text-decoration: none;
   font-size:30px;
@@ -562,7 +485,7 @@ padding-right:150px;
 
 form input,  form textarea{
 border:0;
-width: 50%;
+width: 80%;
 outline:none;
 background-color:#262626;
 padding:15px;
@@ -582,9 +505,7 @@ form .btn2{
 .btn{
   border-radius: 5px;
 }
-/* .contact-left .content{
- margin-top:150px;
-} */
+
 .footer{
   width:100%;
   text-align:center;
@@ -600,44 +521,45 @@ form .btn2{
   display:block;
 }
 
-/*
-.brand-title{
- font-size:1.5rem;
- margin:0.3rem;
+.container_5{
+width: 100%;
+height: 500px;
+background-color:black;
+color: white;
 }
+.lower-section{
+  width:100%;
+}
+
+.left-text{
+
+  width: 35%;
+  float: left;
+margin-left: 30px;
+ padding-top:50px;
+
+}
+.right-text{
+
+width: 50%;
+float: left;
+margin-top: 30px;
+ padding:30px;
+}
+
 
 
 @media (max-width: 767px){
-  .brand-title{
-    margin-right: 180px;
-  }
-  .toggle-button{
-    display:flex;
-  }
-  .navbar-links{
-    /* display:none; */
-  /* }
-  .navbar{
-    flex-flow: wrap;
-    flex-direction:column;
-    align-items:flex-start;
-  }
-.navbar-links ul{
-  flex-flow: wrap;
-  flex-direction:column;
-  width:100%;
+
+.left-text{
+  width: 90%;
+  margin-left: 120px;
+
 }
-.navbar-links li{
-  text-align:center;
-}
-.navbar-links li a{
-  padding:0.5rem 1rem;
-}
-.navbar-links .active{
-  display:flex;
-}  */
-header{
-    height: 230px;
+.right-text{
+width: 90%;
+float: center;
+
 }
 .percent{
   width: 90%;
@@ -657,28 +579,52 @@ margin-left:40px;
     float:center;
   }
 
-
-    #contact{
-
-    }
     section {
         height: 150vh;
-
     }
     #home{
       width: 100%;
     }
     .change-text li span::after{
-
       width:100%;
-
     }
     .education{
       height:500px;
       margin-top:30px;
       margin-left:140px;
     }
+    .navbar {
+      display:fixed;
+      width:95%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
+    .toggle-button {
+        display: flex;
+    }
+
+    .navbar-links {
+        display: none;
+        width: 100%;
+    }
+
+    .navbar-links ul {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .navbar-links ul li {
+        text-align: center;
+    }
+
+    .navbar-links ul li a {
+        padding: .5rem 1rem;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
 
 
 }
