@@ -2,7 +2,7 @@
 *{
 border: 1px solid red;
 }
-html {
+html, body{
   margin:0;
 padding:0;
   box-sizing: border-box;
@@ -12,7 +12,9 @@ body{
   font-size: 0.9rem;
 }
 html, body{
-  width:100%;
+
+
+
 }
 h1{
   font-size:1.5rem;
@@ -24,53 +26,64 @@ h3{
   font-size:1.125rem;
 }
 
-/* navbar section */
-header {
+
+.navbar {
     display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100px;
-    line-height: 50px;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
     background-color: black;
-    color:white;
-    z-index: 1000;
+    color: white;
 }
-header ul {
+
+.brand-title {
+    font-size: 1.5rem;
+    /* margin: .5rem; */
+}
+
+.navbar-links {
+    height: 100%;
+}
+
+.navbar-links ul {
+    display: flex;
+    margin: 0;
     padding: 0;
 }
 
-header li {
-    margin-left: 20px;
-      text-align: center;
-}
-.navimg{
-  width:220px;
-  height:100px;
-}
-nav ul li{
-    list-style-type: none;
-    margin: 10px 20px;
-    display: inline-block;
-
-}
-nav{
-  display:flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap:wrap;
-  font-size: 25px;
+.navbar-links li {
+    list-style: none;
 }
 
-nav ul li a{
-  color:white;
-  text-decoration: none;
-  position:relative;
- font-size: 25px;
-   margin-left: 30px;
+.navbar-links li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 1rem;
 }
-nav ul li a::after{
+
+
+.toggle-button {
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+
+
+.navbar-links ul li a::after{
 background:#ff7235;
 content: "";
 width: 0;
@@ -81,8 +94,101 @@ bottom:-6px;
 transition:0.5s;
 }
 
+@media (max-width: 800px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
-nav ul li a:hover::after {
+    .toggle-button {
+        display: flex;
+    }
+
+    .navbar-links {
+        display: none;
+        width: 100%;
+    }
+
+    .navbar-links ul {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .navbar-links ul li {
+        text-align: center;
+    }
+
+    .navbar-links ul li a {
+        padding: .5rem 1rem;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+}
+
+.navbar{
+  display: flex;
+
+  width: 100%;
+  position: fixed;
+  z-index: 1000;
+}
+
+/* navbar section */
+/* header {
+
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 103px;
+    line-height: 10px;
+    background-color: black;
+    color:white;
+
+}
+header ul {
+    padding: 0;
+}
+
+header li {
+    margin-left: 20px;
+      text-align: center;
+} */
+.navimg{
+  width:220px;
+  height:100px;
+}
+/* nav ul{
+  margin: 0;
+  padding: 0;
+  display:flex;
+}
+nav ul li{
+    list-style-type: none;
+    margin: 10px 20px;
+
+
+}
+nav{
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap:wrap;
+  font-size: 25px;
+} */
+
+.navbar-links ul li a{
+  color:white;
+  text-decoration: none;
+  position:relative;
+ font-size: 25px;
+   margin-left: 30px;
+}
+
+
+
+.navbar-links ul li a:hover::after {
   width:100%;
   text-decoration: none;
   color:#ff7235 ;
@@ -97,6 +203,9 @@ nav ul li a:hover::after {
   margin-left: auto;
   margin-right: auto;
 }
+
+
+
 /* home section */
 #home{
   background-color:black;
@@ -234,9 +343,9 @@ margin-left:350px;
 }
 
 .education{
-  height:700px;
+  height:600px;
   display:block;
-  margin-top:700px;
+  margin-top:50px;
   margin-left:280px;
 justify-content:center;
 }
@@ -264,7 +373,8 @@ justify-content:center;
 
 #contact{
   /* height: 100%; */
-  margin-top: 150px;
+  width:100%;
+  margin-top: 250px;
   background-color: black;
   color:white;
   padding-top: 60px;
@@ -277,19 +387,6 @@ section {
     text-align: center;
 
 }
-@media (max-width: 767px){
-  #contact{
-    /* height: 100%; */
-    margin-top: 200px;
-
-    padding-top: 100px;
-  }
-  section {
-      height: 200vh;
-
-
-  }
-}
 .full-img{
 position:relative;
 left:50%;
@@ -300,7 +397,7 @@ transform: translate(-50%, -50%);
 }
 /* about me */
 svg{
-  width:500px;
+  width:300px;
   float:right;
 }
 .blob-img{
@@ -346,7 +443,7 @@ svg{
   top: 10px;
   left: 0;
 height:500px;
-width: 450px;
+width: 350px;
 }
 .image1 {
   position: absolute;
@@ -371,17 +468,17 @@ margin-top:60px;
 
 }
 #about .col-1{
-  padding-left: 110px;
+  padding-left: 90px;
 }
 #about .col-2{
-   margin-top: 150px;
+   margin-top: 0px;
 }
 .col-1{
-  flex-basis:35%;
+  flex-basis:20%;
   float:left;
 }
 .col-2{
-  flex-basis:60%;
+  flex-basis:30%;
   float:right;
 }
 .sub-title{
@@ -465,7 +562,7 @@ padding-right:150px;
 
 form input,  form textarea{
 border:0;
-width: 80%;
+width: 50%;
 outline:none;
 background-color:#262626;
 padding:15px;
@@ -495,9 +592,93 @@ form .btn2{
   font-weight: 300;
   color:white;
   background-color:black;
+
 }
 #msg{
   color:#61b752;
   margin-top:-10px;
   display:block;
+}
+
+/*
+.brand-title{
+ font-size:1.5rem;
+ margin:0.3rem;
+}
+
+
+@media (max-width: 767px){
+  .brand-title{
+    margin-right: 180px;
+  }
+  .toggle-button{
+    display:flex;
+  }
+  .navbar-links{
+    /* display:none; */
+  /* }
+  .navbar{
+    flex-flow: wrap;
+    flex-direction:column;
+    align-items:flex-start;
+  }
+.navbar-links ul{
+  flex-flow: wrap;
+  flex-direction:column;
+  width:100%;
+}
+.navbar-links li{
+  text-align:center;
+}
+.navbar-links li a{
+  padding:0.5rem 1rem;
+}
+.navbar-links .active{
+  display:flex;
+}  */
+header{
+    height: 230px;
+}
+.percent{
+  width: 90%;
+margin-left:40px;
+}
+
+  .heading .same-text{
+  font-size: 55px;
+  font-weight:300;
+  }
+  .col-1{
+  padding-left: 300px;
+
+  }
+  .col-2{
+    width: 100%;
+    float:center;
+  }
+
+
+    #contact{
+
+    }
+    section {
+        height: 150vh;
+
+    }
+    #home{
+      width: 100%;
+    }
+    .change-text li span::after{
+
+      width:100%;
+
+    }
+    .education{
+      height:500px;
+      margin-top:30px;
+      margin-left:140px;
+    }
+
+
+
 }
